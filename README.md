@@ -7,9 +7,15 @@ I frequently forget to eat in order to puruse work or pleasure, and I'm attempti
 Here's what this app will do:
 
 Show total calories
+
 Show total grams of protein, fat, and carbs
+
 allow for the adding of food consumed (input calorie count and nutritional gram content)
+
 keep track of a goal, and allow the goal to be changed
+
 Provide a percentage of total goal consumed
+
 some sort of graph tracking progress with the percentage?
+
 keep a streak of the number of days in a row the goal has been hit
