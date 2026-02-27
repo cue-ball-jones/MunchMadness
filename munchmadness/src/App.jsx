@@ -22,7 +22,7 @@ function App() {
   return (
       <div>
         <div class="streak">
-          <p>Streak:</p>
+          <h3>Streak:</h3>
         </div>
 
         <div>
@@ -30,15 +30,34 @@ function App() {
         </div>
         
         <div>
-          <p>Current Stats</p>
-          <p>Calories:</p>
-          <p>Protein:</p>
-          <p>Carbohydrates:</p>
-          <p>Fat:</p>
+          <h2>Current Stats</h2>
+
+          <div class="logContainer"> 
+
+            <div class="vertSpread">
+              <p>Calories:</p>
+            </div>
+            
+            <div class="goals">
+              <h4>Goals</h4>
+              <p>Calories:</p>
+              <p>Protein:</p>
+              <p>Carbohydrates:</p>
+              <p>Fat:</p>
+            </div>
+
+          </div>
+          
+          <div class="logContainer"> 
+            <p>Protein:</p>
+            <p>Carbohydrates:</p>
+            <p>Fat:</p>
+          </div>
+          
         </div>
 
         <div>
-          <p>Track Meal</p>
+          <h2>Track Meal</h2>
 
           <div class="logContainer">
          
@@ -58,6 +77,11 @@ function App() {
 
           </div>
         </div>
+
+        <div class="logButton">
+          <button>Eat!</button>
+        </div>
+
       </div>
   )
 }
