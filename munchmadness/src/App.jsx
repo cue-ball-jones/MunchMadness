@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Pie from "./ProgressCircle";
+import { themeChange } from './themeChange';
 import './App.css'
 
 
@@ -26,6 +27,8 @@ function App() {
       localStorage.setItem("lastReset", today);
     }
   }, []);
+
+  const { theme, toggleTheme } = themeChange();
 
   const streakVal = localStorage.getItem("streak");
 
@@ -258,7 +261,15 @@ function App() {
           <button onClick={totalChange}>
             Eat!
           </button>
+
+          <div>
+            <button onClick={toggleTheme}>
+              {theme === 'dark' ? '☀️ Light' : '🌙 Dark'}
+            </button>
+          </div>
+
         </div>
+
 
       </div>
   )
