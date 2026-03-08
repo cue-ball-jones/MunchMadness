@@ -1,19 +1,37 @@
 #root {
   margin: 0 auto;
-  padding: 2rem;
-  
+  width: 100%;
 }
 
 .streak{
   display: flex;
   justify-content: right;
   align-items: center;
+  color: var(--color-textheader)
+}
+
+.background{
+  background-color: var(--color-background);
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  background-color: var(--color-header);
+  padding-left: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .logContainer{
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
 }
 
 .logButton{
@@ -31,9 +49,41 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  flex: 1;
 }
 
 .zontDiv{
   display: flex;
   flex-direction: row;
+}
+
+.styledDivRow{
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+
+  background: var(--color-box);
+  border-radius: 10px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, .37);
+}
+
+.styledDivCol{
+  display: flex;
+  flex-direction: column;
+
+  background: var(--color-box);
+  border-radius: 10px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, .37);
+}
+
+.containerGrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;    
+  gap: 1rem;                      
+}
+
+.centerText{
+  text-align: center;
+  padding: 1rem;
 }

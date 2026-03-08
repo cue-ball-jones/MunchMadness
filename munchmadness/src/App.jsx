@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import Pie from "./ProgressCircle";
-import { themeChange } from './themeChange';
 import './App.css'
+
 
 
 function App() {
@@ -27,8 +27,6 @@ function App() {
       localStorage.setItem("lastReset", today);
     }
   }, []);
-
-  const { theme, toggleTheme } = themeChange();
 
   const streakVal = localStorage.getItem("streak");
 
@@ -122,41 +120,88 @@ function App() {
 
 
   return (
-      <div>
+      <>
 
-        {/*start of pie chart guy code*/}       
-        <div>
-          <Pie 
-            currentVal={totalCal}
-            totalVal={calGoal}
-            units="Calories"
-            colour="red"
-            size="25vw"
-          />
-        </div>
-
-
-        <div class="streak">
-          <h3>Streak:&nbsp;</h3>
-          <h3>{streakVal}</h3>
-        </div>
-
-        <div>
+        <header class="header">
           <h1>Munch.org</h1>
-        </div>
+          <div class="streak">
+            <img src="/smallSM.png" alt="streakLogo" />
+            <h3>{streakVal}</h3>
+          </div>
+        </header>
+
+        <div class="background">
         
         <div>
-          <h2>Current Stats</h2>
+
+          <div class="centerText">
+            <h2>Current Stats</h2>
+          </div>
 
           <div class="logContainer"> 
 
+            <div class="styledDivRow">
+
             <div class="vertSpread">
-              <div>
-                <p>Calories:</p>
-                <p>{totalCal}</p>
-              </div>
+
+              <Pie 
+                currentVal={totalCal}
+                totalVal={calGoal}
+                units="Calories"
+                colour="#2d426e"
+              />
+              
+              <Pie 
+                currentVal={totalCarb}
+                totalVal={carbGoal}
+                units="Carbs"
+                colour="#2d426e"
+              />
+
+            </div>
+
+            <div class="vertSpread">
+
+              <Pie 
+                currentVal={totalPro}
+                totalVal={proGoal}
+                units="Protein"
+                colour="#2d426e"
+              />
+              
+              <Pie 
+                currentVal={totalFat}
+                totalVal={fatGoal}
+                units="Fat"
+                colour="#2d426e"
+              />
+
+            </div>
+
+            </div>
+
             </div>
             
+            <div class="styledDivCol">
+              <h4>Remaining Macros</h4>
+              <div class="containerGrid">
+                <div>
+                  <p>Calories</p>
+                </div>
+                <div>
+                  <p>Protein</p>
+                </div>
+                <div>
+                  <p>Carbohydrates</p>
+                </div>
+                <div>
+                  <p>Fat</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="styledDivRow">
+
             <div class="goals">
               <h4>Goals</h4>
 
@@ -198,29 +243,21 @@ function App() {
               
             </div>
 
-          </div>
-          
-          <div class="logContainer"> 
-            <div>
-              <p>Protein:</p>
-              <p>{totalPro}</p>
-            </div>
-            
-            <div>
-              <p>Carbohydrates:</p>
-              <p>{totalCarb}</p>
             </div>
 
-            <div>
-              <p>Fat:</p>
-              <p>{totalFat}</p>
-            </div>
           </div>
           
-        </div>
+          
+          
+        
 
         <div>
-          <h2>Track Meal</h2>
+
+          <div class="centerText">
+            <h2>Track Meal</h2>
+          </div>
+
+          <div class="styledDivCol">
 
           <div class="logContainer">
          
@@ -255,6 +292,7 @@ function App() {
             </div>
 
           </div>
+          </div>
         </div>
 
         <div class="logButton">
@@ -262,16 +300,12 @@ function App() {
             Eat!
           </button>
 
-          <div>
-            <button onClick={toggleTheme}>
-              {theme === 'dark' ? '☀️ Light' : '🌙 Dark'}
-            </button>
-          </div>
-
         </div>
 
-
       </div>
+
+
+      </>
   )
 }
 
