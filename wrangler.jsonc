@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "munchdotorg",
+  "compatibility_date": "2025-09-27",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "munchmadness"
+  },
+  "compatibility_flags": [
+    "nodejs_compat"
+  ]
+}
